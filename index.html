@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Auraa Jewels – India's Finest Gold & Diamond Jewellery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8D49A;
+      --gold-dark: #8C6D2F;
+      --cream: #FAF6EF;
+      --ivory: #F3EDE0;
+      --charcoal: #2B2B2B;
+      --muted: #7A6E5F;
+      --white: #FFFFFF;
+      --border: rgba(201,168,76,0.25);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ── TICKER ── */
+    .ticker {
+      background: var(--charcoal);
+      color: var(--gold-light);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 7px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-inner {
+      display: inline-block;
+      animation: ticker 30s linear infinite;
+    }
+    .ticker-inner span { margin: 0 3rem; }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 4vw;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem; font-weight: 600;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--charcoal); text-decoration: none; font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-actions { display: flex; gap: 1.1rem; align-items: center; }
+    .nav-actions button {
+      background: none; border: none; cursor: pointer;
+      font-size: 1.15rem; color: var(--charcoal); transition: color .2s;
+    }
+    .nav-actions button:hover { color: var(--gold); }
+    .btn-cart {
+      background: var(--gold) !important;
+      color: var(--white) !important;
+      border-radius: 2px;
+      padding: 6px 14px !important;
+      font-size: 0.75rem !important;
+      letter-spacing: 0.08em;
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 22px; height: 1.5px; background: var(--charcoal); display: block; }
+
+    /* ── HERO ── */
+    .hero {
+      height: 92vh; min-height: 560px;
+      background: linear-gradient(135deg, #1a1209 0%, #2e1f0a 45%, #1a1209 100%);
+      position: relative; overflow: hidden;
+      display: flex; align-items: center;
+    }
+    .hero-bg-pattern {
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(201,168,76,.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(201,168,76,.08) 0%, transparent 50%);
+    }
+    .hero-ornament {
+      position: absolute; right: 6vw; top: 50%; transform: translateY(-50%);
+      width: min(42vw, 520px); opacity: .06;
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 8vw; max-width: 680px;
+    }
+    .hero-eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); font-weight: 400; margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: .7rem;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: ''; flex: 0 0 28px; height: 1px; background: var(--gold);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 300; line-height: 1.12;
+      color: var(--white); margin-bottom: 1.4rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold-light); }
+    .hero p {
+      font-size: .95rem; color: rgba(255,255,255,.65);
+      line-height: 1.75; margin-bottom: 2.2rem; max-width: 440px;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gold); color: var(--charcoal);
+      padding: 13px 32px; border: none; cursor: pointer;
+      font-family: 'Jost', sans-serif; font-size: .8rem;
+      letter-spacing: .12em; text-transform: uppercase; font-weight: 500;
+      text-decoration: none; display: inline-block;
+      transition: background .25s, transform .2s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      padding: 12px 32px; border: 1px solid rgba(255,255,255,.35); cursor: pointer;
+      font-family: 'Jost', sans-serif; font-size: .8rem;
+      letter-spacing: .12em; text-transform: uppercase; font-weight: 400;
+      text-decoration: none; display: inline-block;
+      transition: border-color .25s, color .25s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); }
+
+    /* ── SECTION HEADINGS ── */
+    .section-head { text-align: center; margin-bottom: 3rem; }
+    .section-head .eyebrow {
+      font-size: .68rem; letter-spacing: .3em; text-transform: uppercase;
+      color: var(--gold); display: block; margin-bottom: .6rem;
+    }
+    .section-head h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.9rem); font-weight: 300;
+    }
+    .section-head p {
+      color: var(--muted); font-size: .9rem; margin-top: .6rem; max-width: 480px; margin-inline: auto;
+    }
+    .divider {
+      display: flex; align-items: center; justify-content: center; gap: .6rem; margin: .8rem auto 0;
+    }
+    .divider span { width: 40px; height: 1px; background: var(--gold); opacity: .6; }
+    .divider i { color: var(--gold); font-size: .55rem; }
+
+    /* ── CATEGORIES ── */
+    .categories { padding: 80px 5vw; }
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1.4rem;
+    }
+    .cat-card {
+      text-align: center; cursor: pointer;
+      animation: fadeUp .5s both;
+    }
+    .cat-card:nth-child(1) { animation-delay: .05s }
+    .cat-card:nth-child(2) { animation-delay: .1s }
+    .cat-card:nth-child(3) { animation-delay: .15s }
+    .cat-card:nth-child(4) { animation-delay: .2s }
+    .cat-card:nth-child(5) { animation-delay: .25s }
+    .cat-card:nth-child(6) { animation-delay: .3s }
+    .cat-card:nth-child(7) { animation-delay: .35s }
+    .cat-card:nth-child(8) { animation-delay: .4s }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .cat-icon-wrap {
+      width: 100px; height: 100px; border-radius: 50%;
+      background: var(--ivory); margin: 0 auto 1rem;
+      display: flex; align-items: center; justify-content: center;
+      border: 1.5px solid var(--border);
+      font-size: 2.4rem; transition: background .25s, transform .25s;
+    }
+    .cat-card:hover .cat-icon-wrap {
+      background: var(--gold); transform: scale(1.07);
+    }
+    .cat-card:hover .cat-icon-wrap span { filter: brightness(0) invert(1); }
+    .cat-card h3 { font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 500; }
+    .cat-card p  { font-size: .73rem; color: var(--muted); margin-top: .2rem; }
+
+    /* ── COLLECTIONS BANNER ── */
+    .collections { padding: 0 5vw 80px; }
+    .coll-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      grid-template-rows: 280px 280px;
+      gap: 1.2rem;
+    }
+    .coll-card {
+      position: relative; overflow: hidden; cursor: pointer;
+      border-radius: 2px;
+    }
+    .coll-card:first-child { grid-row: 1 / span 2; }
+    .coll-bg {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+    .coll-card:hover .coll-bg { transform: scale(1.04); }
+    .coll-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.65) 0%, transparent 55%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 1.8rem;
+    }
+    .coll-tag {
+      font-size: .65rem; letter-spacing: .25em; text-transform: uppercase;
+      color: var(--gold-light); margin-bottom: .3rem;
+    }
+    .coll-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.2vw, 1.8rem); font-weight: 300;
+      color: var(--white); line-height: 1.2;
+    }
+    .coll-cta {
+      margin-top: .8rem; font-size: .72rem; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--gold-light);
+      text-decoration: none; display: inline-flex; align-items: center; gap: .4rem;
+    }
+    .coll-cta::after { content: '→'; transition: transform .2s; }
+    .coll-card:hover .coll-cta::after { transform: translateX(4px); }
+
+    /* SVG placeholder jewellery images */
+    .coll-bg-svg {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── PRODUCT GRID ── */
+    .products { padding: 80px 5vw; background: var(--ivory); }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 2rem;
+    }
+    .product-card {
+      background: var(--white);
+      cursor: pointer;
+      transition: box-shadow .25s;
+    }
+    .product-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.10); }
+    .product-img {
+      width: 100%; aspect-ratio: 1;
+      background: var(--ivory);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem; position: relative; overflow: hidden;
+    }
+    .product-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--gold); color: var(--white);
+      font-size: .62rem; letter-spacing: .1em; text-transform: uppercase;
+      padding: 3px 10px;
+    }
+    .product-wishlist {
+      position: absolute; top: 10px; right: 10px;
+      background: var(--white); border: none; border-radius: 50%;
+      width: 32px; height: 32px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,.1);
+      transition: background .2s;
+    }
+    .product-wishlist:hover { background: #ffe4e4; }
+    .product-info { padding: 1rem 1.1rem 1.2rem; }
+    .product-info h4 {
+      font-size: .88rem; font-weight: 500; margin-bottom: .25rem;
+    }
+    .product-info .metal {
+      font-size: .73rem; color: var(--muted); margin-bottom: .5rem;
+    }
+    .product-info .price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 600; color: var(--charcoal);
+    }
+    .product-info .price .orig {
+      font-size: .8rem; color: var(--muted); text-decoration: line-through; margin-left: .4rem; font-weight: 400;
+    }
+    .product-add {
+      width: 100%; margin-top: .8rem;
+      background: var(--charcoal); color: var(--white);
+      border: none; padding: 9px; cursor: pointer;
+      font-family: 'Jost', sans-serif; font-size: .72rem;
+      letter-spacing: .12em; text-transform: uppercase; font-weight: 400;
+      transition: background .2s;
+    }
+    .product-add:hover { background: var(--gold-dark); }
+
+    /* ── GOLD RATE BANNER ── */
+    .gold-rate-band {
+      background: var(--charcoal);
+      padding: 20px 5vw;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    .gold-rate-band h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; color: var(--white); font-weight: 300;
+    }
+    .gold-rates { display: flex; gap: 2.5rem; }
+    .rate-item { text-align: center; }
+    .rate-item .label { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); }
+    .rate-item .value { font-size: 1.05rem; color: var(--gold-light); font-weight: 500; }
+    .rate-item .change { font-size: .68rem; color: #6dbf7e; }
+
+    /* ── TRUST STRIP ── */
+    .trust { padding: 60px 5vw; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .trust-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem;
+      text-align: center;
+    }
+    .trust-item .icon { font-size: 2rem; margin-bottom: .6rem; }
+    .trust-item h4 { font-size: .82rem; letter-spacing: .06em; font-weight: 500; margin-bottom: .3rem; }
+    .trust-item p  { font-size: .76rem; color: var(--muted); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { padding: 80px 5vw; background: var(--ivory); }
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.8rem;
+    }
+    .testi-card {
+      background: var(--white); padding: 2rem 1.8rem;
+      border-top: 3px solid var(--gold);
+    }
+    .testi-stars { color: var(--gold); font-size: 1rem; margin-bottom: .8rem; }
+    .testi-card p { font-size: .88rem; color: var(--muted); line-height: 1.8; font-style: italic; }
+    .testi-author { margin-top: 1rem; font-size: .78rem; font-weight: 600; letter-spacing: .06em; }
+    .testi-occasion { font-size: .72rem; color: var(--muted); font-weight: 400; }
+
+    /* ── NEWSLETTER ── */
+    .newsletter {
+      padding: 80px 5vw;
+      background: linear-gradient(135deg, #2B2B2B 0%, #1a1209 100%);
+      text-align: center;
+    }
+    .newsletter h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300;
+      color: var(--white); margin-bottom: .6rem;
+    }
+    .newsletter p { font-size: .88rem; color: rgba(255,255,255,.55); margin-bottom: 2rem; }
+    .newsletter-form {
+      display: flex; max-width: 460px; margin: 0 auto; gap: .5rem;
+    }
+    .newsletter-form input {
+      flex: 1; padding: 12px 16px; border: 1px solid rgba(255,255,255,.2);
+      background: rgba(255,255,255,.07); color: var(--white);
+      font-family: 'Jost', sans-serif; font-size: .85rem; outline: none;
+    }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,.35); }
+    .newsletter-form button {
+      background: var(--gold); color: var(--charcoal);
+      border: none; padding: 0 24px; cursor: pointer;
+      font-family: 'Jost', sans-serif; font-size: .78rem;
+      letter-spacing: .1em; text-transform: uppercase; font-weight: 500;
+      transition: background .2s;
+    }
+    .newsletter-form button:hover { background: var(--gold-light); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal); color: rgba(255,255,255,.6);
+      padding: 60px 5vw 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 3rem;
+    }
+    .footer-brand .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; color: var(--white); font-weight: 600;
+      letter-spacing: .04em; margin-bottom: 1rem; display: block;
+    }
+    .footer-brand .logo span { color: var(--gold); }
+    .footer-brand p { font-size: .82rem; line-height: 1.8; }
+    .footer-brand .socials { display: flex; gap: .8rem; margin-top: 1.2rem; }
+    .footer-brand .socials a {
+      width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.5); text-decoration: none; font-size: .85rem;
+      transition: border-color .2s, color .2s;
+    }
+    .footer-brand .socials a:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-col h5 {
+      font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--white); margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: .6rem; }
+    .footer-col ul a {
+      font-size: .8rem; color: rgba(255,255,255,.5);
+      text-decoration: none; transition: color .2s;
+    }
+    .footer-col ul a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 1.5rem;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { font-size: .75rem; }
+    .footer-bottom .payments { display: flex; gap: .5rem; align-items: center; }
+    .pay-badge {
+      background: rgba(255,255,255,.08); border-radius: 3px;
+      padding: 3px 10px; font-size: .68rem; color: rgba(255,255,255,.5);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .coll-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .coll-card:first-child { grid-row: auto; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 580px) {
+      .hero h1 { font-size: 2.4rem; }
+      .cat-grid { grid-template-columns: repeat(4,1fr); }
+      .cat-icon-wrap { width: 70px; height: 70px; font-size: 1.7rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .coll-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── MOBILE NAV OVERLAY ── */
+    .mobile-nav {
+      display: none; position: fixed; inset: 0; background: var(--white);
+      z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; text-decoration: none; color: var(--charcoal);
+    }
+    .mobile-nav a:hover { color: var(--gold); }
+    .mobile-close {
+      position: absolute; top: 20px; right: 24px;
+      font-size: 1.5rem; background: none; border: none; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>✦ New Arrivals Dropping Daily</span>
+    <span>✦ 22K & 18K Gold Hallmarked Jewellery</span>
+    <span>✦ Free Shipping on Orders ₹5,000+</span>
+    <span>✦ Lifetime Exchange Programme</span>
+    <span>✦ BIS Hallmark Certified</span>
+    <span>✦ EMI Available</span>
+    <span>✦ New Arrivals Dropping Daily</span>
+    <span>✦ 22K & 18K Gold Hallmarked Jewellery</span>
+    <span>✦ Free Shipping on Orders ₹5,000+</span>
+    <span>✦ Lifetime Exchange Programme</span>
+    <span>✦ BIS Hallmark Certified</span>
+    <span>✦ EMI Available</span>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-logo">Auraa<span>✦</span>Jewels</a>
+  <ul class="nav-links">
+    <li><a href="#categories">Collections</a></li>
+    <li><a href="#new-arrivals">New Arrivals</a></li>
+    <li><a href="#products">Shop</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#stores">Stores</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button title="Search">🔍</button>
+    <button title="Wishlist">♡</button>
+    <button class="btn-cart" title="Cart">Bag (0)</button>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="#categories" onclick="toggleMenu()">Collections</a>
+  <a href="#new-arrivals" onclick="toggleMenu()">New Arrivals</a>
+  <a href="#products" onclick="toggleMenu()">Shop</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#stores" onclick="toggleMenu()">Stores</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+
+  <!-- Decorative SVG Mandala -->
+  <svg class="hero-ornament" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="198" stroke="#C9A84C" stroke-width="1"/>
+    <circle cx="200" cy="200" r="160" stroke="#C9A84C" stroke-width=".5"/>
+    <circle cx="200" cy="200" r="120" stroke="#C9A84C" stroke-width=".5"/>
+    <circle cx="200" cy="200" r="80"  stroke="#C9A84C" stroke-width="1"/>
+    <circle cx="200" cy="200" r="40"  stroke="#C9A84C" stroke-width=".5"/>
+    <line x1="2"   y1="200" x2="398" y2="200" stroke="#C9A84C" stroke-width=".5"/>
+    <line x1="200" y1="2"   x2="200" y2="398" stroke="#C9A84C" stroke-width=".5"/>
+    <line x1="60"  y1="60"  x2="340" y2="340" stroke="#C9A84C" stroke-width=".5"/>
+    <line x1="340" y1="60"  x2="60"  y2="340" stroke="#C9A84C" stroke-width=".5"/>
+    <polygon points="200,10 235,90 320,90 253,140 277,220 200,170 123,220 147,140 80,90 165,90" stroke="#C9A84C" stroke-width=".8" fill="none"/>
+  </svg>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">New Collection 2025</p>
+    <h1>Jewels That Tell <em>Your Story</em></h1>
+    <p>Discover exquisite gold and diamond jewellery crafted with centuries of tradition. Every piece is a celebration of love, beauty, and lasting legacy.</p>
+    <div class="hero-ctas">
+      <a href="#products" class="btn-primary">Explore Collections</a>
+      <a href="#about" class="btn-outline">Our Craft</a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+  <div class="section-head">
+    <span class="eyebrow">Browse by Category</span>
+    <h2>Shop Your Favourite</h2>
+    <div class="divider"><span></span><i>✦</i><span></span></div>
+  </div>
+
+  <div class="cat-grid">
+    <div class="cat-card">
+      <div class="cat-icon-wrap"><span>💍</span></div>
+      <h3>Rings</h3><p>680+ Designs</p>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon-wrap"><span>📿</span></div>
+      <h3>Necklaces</h3><p>920+ Designs</p>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon-wrap"><span>🌸</span></div>
+      <h3>Earrings</h3><p>1200+ Designs</p>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon-wrap"><span>✨</span></div>
+      <h3>Bangles</h3><p>540+ Designs</p>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon-wrap"><span>🔗</span></div>
+      <h3>Chains</h3><p>370+ Designs</p>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon-wrap"><span>🤝</span></div>
+      <h3>Bracelets</h3><p>310+ Designs</p>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon-wrap"><span>👰</span></div>
+      <h3>Bridal</h3><p>490+ Designs</p>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon-wrap"><span>👔</span></div>
+      <h3>Men's</h3><p>220+ Designs</p>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTION BANNERS -->
+<section class="collections" id="collections">
+  <div class="section-head">
+    <span class="eyebrow">Curated For You</span>
+    <h2>Signature Collections</h2>
+    <div class="divider"><span></span><i>✦</i><span></span></div>
+  </div>
+
+  <div class="coll-grid">
+    <!-- Large card -->
+    <div class="coll-card">
+      <svg class="coll-bg-svg" viewBox="0 0 600 560" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="g1" cx="50%" cy="50%" r="60%">
+            <stop offset="0%"   stop-color="#3d2005"/>
+            <stop offset="100%" stop-color="#1a0e03"/>
+          </radialGradient>
+        </defs>
+        <rect width="600" height="560" fill="url(#g1)"/>
+        <!-- decorative necklace silhouette -->
+        <ellipse cx="300" cy="200" rx="160" ry="20" stroke="#C9A84C" stroke-width="2" fill="none" opacity=".5"/>
+        <ellipse cx="300" cy="200" rx="120" ry="15" stroke="#C9A84C" stroke-width="1" fill="none" opacity=".3"/>
+        <circle cx="300" cy="340" r="60" stroke="#C9A84C" stroke-width="2" fill="none" opacity=".5"/>
+        <circle cx="300" cy="340" r="40" fill="none" stroke="#E8D49A" stroke-width="1" opacity=".4"/>
+        <line x1="140" y1="200" x2="240" y2="340" stroke="#C9A84C" stroke-width="1.5" opacity=".5"/>
+        <line x1="460" y1="200" x2="360" y2="340" stroke="#C9A84C" stroke-width="1.5" opacity=".5"/>
+        <!-- shimmer circles -->
+        <circle cx="180" cy="180" r="4" fill="#E8D49A" opacity=".7"/>
+        <circle cx="420" cy="180" r="4" fill="#E8D49A" opacity=".7"/>
+        <circle cx="260" cy="210" r="3" fill="#E8D49A" opacity=".5"/>
+        <circle cx="340" cy="210" r="3" fill="#E8D49A" opacity=".5"/>
+      </svg>
+      <div class="coll-overlay">
+        <p class="coll-tag">Bestseller</p>
+        <h3 class="coll-title">Rivaah — The Bridal Edit</h3>
+        <a href="#" class="coll-cta">Shop Now</a>
+      </div>
+    </div>
+
+    <!-- Top right -->
+    <div class="coll-card">
+      <svg class="coll-bg-svg" viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0d1a12"/>
+            <stop offset="100%" stop-color="#1a2d1f"/>
+          </linearGradient>
+        </defs>
+        <rect width="300" height="280" fill="url(#g2)"/>
+        <circle cx="150" cy="130" r="70" stroke="#C9A84C" stroke-width="1.5" fill="none" opacity=".5"/>
+        <circle cx="150" cy="130" r="45" stroke="#E8D49A" stroke-width="1" fill="none" opacity=".35"/>
+        <circle cx="150" cy="130" r="22" fill="#C9A84C" opacity=".18"/>
+        <polygon points="150,80 163,110 196,110 170,128 180,162 150,143 120,162 130,128 104,110 137,110" stroke="#C9A84C" stroke-width="1" fill="none" opacity=".6"/>
+      </svg>
+      <div class="coll-overlay">
+        <p class="coll-tag">New Arrival</p>
+        <h3 class="coll-title">Diamond Solitaires</h3>
+        <a href="#" class="coll-cta">Explore</a>
+      </div>
+    </div>
+
+    <!-- Bottom right -->
+    <div class="coll-card">
+      <svg class="coll-bg-svg" viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1a100a"/>
+            <stop offset="100%" stop-color="#2d1a0f"/>
+          </linearGradient>
+        </defs>
+        <rect width="300" height="280" fill="url(#g3)"/>
+        <!-- bangle shapes -->
+        <ellipse cx="150" cy="140" rx="80" ry="30" stroke="#C9A84C" stroke-width="3" fill="none" opacity=".55"/>
+        <ellipse cx="150" cy="140" rx="60" ry="22" stroke="#E8D49A" stroke-width="1.5" fill="none" opacity=".35"/>
+        <circle cx="70"  cy="140" r="6" fill="#C9A84C" opacity=".7"/>
+        <circle cx="230" cy="140" r="6" fill="#C9A84C" opacity=".7"/>
+        <circle cx="150" cy="110" r="6" fill="#C9A84C" opacity=".5"/>
+        <circle cx="150" cy="170" r="6" fill="#C9A84C" opacity=".5"/>
+      </svg>
+      <div class="coll-overlay">
+        <p class="coll-tag">Festive Edit</p>
+        <h3 class="coll-title">Gold Bangles & Kadas</h3>
+        <a href="#" class="coll-cta">Explore</a>
+      </div>
+    </div>
+
+    <!-- Extra small card -->
+    <div class="coll-card" style="display:none" id="extra-card"></div>
+  </div>
+</section>
+
+<!-- GOLD RATE BAND -->
+<div class="gold-rate-band">
+  <h3>Today's Gold Rate</h3>
+  <div class="gold-rates">
+    <div class="rate-item">
+      <div class="label">22K / 10g</div>
+      <div class="value" id="rate22k">₹72,450</div>
+      <div class="change">▲ ₹120</div>
+    </div>
+    <div class="rate-item">
+      <div class="label">18K / 10g</div>
+      <div class="value" id="rate18k">₹59,250</div>
+      <div class="change">▲ ₹98</div>
+    </div>
+    <div class="rate-item">
+      <div class="label">Silver / 10g</div>
+      <div class="value">₹890</div>
+      <div class="change" style="color:#f87171">▼ ₹10</div>
+    </div>
+  </div>
+  <a href="#" class="btn-primary" style="font-size:.74rem">Book Appointment</a>
+</div>
+
+<!-- PRODUCTS / NEW ARRIVALS -->
+<section class="products" id="new-arrivals">
+  <div class="section-head">
+    <span class="eyebrow">Fresh Drops</span>
+    <h2>New Arrivals</h2>
+    <p>New designs drop every weekday — be the first to discover them.</p>
+    <div class="divider"><span></span><i>✦</i><span></span></div>
+  </div>
+  <div class="product-grid" id="products">
+
+    <!-- Product cards -->
+    <div class="product-card">
+      <div class="product-img">
+        💍
+        <span class="product-badge">New</span>
+        <button class="product-wishlist">♡</button>
+      </div>
+      <div class="product-info">
+        <h4>Floral Diamond Ring</h4>
+        <p class="metal">18K White Gold · 0.35ct</p>
+        <div class="price">₹42,500 <span class="orig">₹48,000</span></div>
+        <button class="product-add">Add to Bag</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        📿
+        <span class="product-badge">Trending</span>
+        <button class="product-wishlist">♡</button>
+      </div>
+      <div class="product-info">
+        <h4>Polki Choker Necklace</h4>
+        <p class="metal">22K Gold · Polki Set</p>
+        <div class="price">₹1,24,000</div>
+        <button class="product-add">Add to Bag</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        🌸
+        <button class="product-wishlist">♡</button>
+      </div>
+      <div class="product-info">
+        <h4>Lotus Jhumka Earrings</h4>
+        <p class="metal">22K Gold · Enamel</p>
+        <div class="price">₹18,200 <span class="orig">₹21,000</span></div>
+        <button class="product-add">Add to Bag</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        ✨
+        <span class="product-badge">Bestseller</span>
+        <button class="product-wishlist">♡</button>
+      </div>
+      <div class="product-info">
+        <h4>Antique Gold Bangle Set</h4>
+        <p class="metal">22K Gold · Temple Design</p>
+        <div class="price">₹86,500</div>
+        <button class="product-add">Add to Bag</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        🔗
+        <button class="product-wishlist">♡</button>
+      </div>
+      <div class="product-info">
+        <h4>Rope Chain Necklace</h4>
+        <p class="metal">18K Yellow Gold · 18"</p>
+        <div class="price">₹32,000</div>
+        <button class="product-add">Add to Bag</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        💎
+        <span class="product-badge">New</span>
+        <button class="product-wishlist">♡</button>
+      </div>
+      <div class="product-info">
+        <h4>Solitaire Pendant</h4>
+        <p class="metal">18K White Gold · 0.50ct</p>
+        <div class="price">₹65,000 <span class="orig">₹72,000</span></div>
+        <button class="product-add">Add to Bag</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        🤝
+        <button class="product-wishlist">♡</button>
+      </div>
+      <div class="product-info">
+        <h4>Kada — Men's Edition</h4>
+        <p class="metal">22K Gold · Aveer</p>
+        <div class="price">₹54,000</div>
+        <button class="product-add">Add to Bag</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        👰
+        <span class="product-badge">Bridal</span>
+        <button class="product-wishlist">♡</button>
+      </div>
+      <div class="product-info">
+        <h4>Kundan Maang Tikka</h4>
+        <p class="metal">22K Gold · Kundan</p>
+        <div class="price">₹38,500</div>
+        <button class="product-add">Add to Bag</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;margin-top:3rem">
+    <a href="#" class="btn-primary">View All Products</a>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust">
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="icon">🏅</div>
+      <h4>BIS Hallmarked</h4>
+      <p>Every piece certified for purity</p>
+    </div>
+    <div class="trust-item">
+      <div class="icon">🔄</div>
+      <h4>Lifetime Exchange</h4>
+      <p>Full value for your old gold</p>
+    </div>
+    <div class="trust-item">
+      <div class="icon">🚚</div>
+      <h4>Free Shipping</h4>
+      <p>On all orders above ₹5,000</p>
+    </div>
+    <div class="trust-item">
+      <div class="icon">💳</div>
+      <h4>Easy EMI</h4>
+      <p>0% EMI on select cards</p>
+    </div>
+    <div class="trust-item">
+      <div class="icon">🔒</div>
+      <h4>Secure Payment</h4>
+      <p>256-bit SSL encrypted</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="about">
+  <div class="section-head">
+    <span class="eyebrow">Customer Stories</span>
+    <h2>Loved Across India</h2>
+    <div class="divider"><span></span><i>✦</i><span></span></div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p>"The bridal set from the Rivaah collection was absolutely stunning. The craftsmanship is beyond what I expected. Every guest complimented it at the wedding."</p>
+      <p class="testi-author">Priya Sharma <span class="testi-occasion">— Wedding, Mumbai</span></p>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p>"I gifted my mother a gold bangle set and she was moved to tears. The hallmarking gave us full confidence in the purity. Packaging was exquisite."</p>
+      <p class="testi-author">Rahul Verma <span class="testi-occasion">— Anniversary Gift</span></p>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★☆</div>
+      <p>"Ordered the solitaire pendant online — arrived safely, exactly as shown, with a certificate. The website experience was smooth and delivery was fast."</p>
+      <p class="testi-author">Ananya Nair <span class="testi-occasion">— Online Purchase, Bengaluru</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <h2>Stay in the Loop</h2>
+  <p>New arrivals, exclusive offers, and styling inspiration — delivered to your inbox.</p>
+  <div class="newsletter-form">
+    <input type="email" placeholder="Your email address" />
+    <button>Subscribe</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="stores">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo">Auraa<span>✦</span>Jewels</span>
+      <p>India's finest handcrafted jewellery. Celebrating every precious moment with gold and diamonds of unmatched purity since 1998.</p>
+      <div class="socials">
+        <a href="#">f</a>
+        <a href="#">in</a>
+        <a href="#">📷</a>
+        <a href="#">▶</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h5>Shop</h5>
+      <ul>
+        <li><a href="#">Gold Jewellery</a></li>
+        <li><a href="#">Diamond Jewellery</a></li>
+        <li><a href="#">Bridal Collection</a></li>
+        <li><a href="#">Men's Jewellery</a></li>
+        <li><a href="#">Silver & Platinum</a></li>
+        <li><a href="#">New Arrivals</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#">Find a Store</a></li>
+        <li><a href="#">Track Order</a></li>
+        <li><a href="#">Returns & Exchange</a></li>
+        <li><a href="#">Care Guide</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About Auraa</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Auraa Jewels. All rights reserved.</p>
+    <div class="payments">
+      <span class="pay-badge">Visa</span>
+      <span class="pay-badge">Mastercard</span>
+      <span class="pay-badge">UPI</span>
+      <span class="pay-badge">NetBanking</span>
+      <span class="pay-badge">EMI</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+
+  // Wishlist toggle
+  document.querySelectorAll('.product-wishlist').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      btn.textContent = btn.textContent === '♡' ? '❤️' : '♡';
+    });
+  });
+
+  // Add to bag counter
+  let cartCount = 0;
+  document.querySelectorAll('.product-add').forEach(btn => {
+    btn.addEventListener('click', () => {
+      cartCount++;
+      document.querySelector('.btn-cart').textContent = `Bag (${cartCount})`;
+      btn.textContent = '✓ Added';
+      btn.style.background = 'var(--gold)';
+      setTimeout(() => {
+        btn.textContent = 'Add to Bag';
+        btn.style.background = '';
+      }, 1800);
+    });
+  });
+
+  // Scroll animation for categories
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.cat-card').forEach(c => c.style.animationPlayState = 'running');
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.cat-card').forEach(c => c.style.animationPlayState = 'paused');
+  const catSection = document.querySelector('.categories');
+  if (catSection) observer.observe(catSection);
+
+  // Gold rate live simulation
+  function updateRates() {
+    const base22 = 72450, base18 = 59250;
+    const swing = () => Math.floor((Math.random() - 0.5) * 80);
+    const r22 = base22 + swing(), r18 = base18 + swing();
+    document.getElementById('rate22k').textContent = '₹' + r22.toLocaleString('en-IN');
+    document.getElementById('rate18k').textContent = '₹' + r18.toLocaleString('en-IN');
+  }
+  setInterval(updateRates, 8000);
+</script>
+</body>
+</html>
