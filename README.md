@@ -1,4 +1,4 @@
-# Auraa Jewels — Luxury Jewellery Website
+# SHA Jewellers — Luxury Jewellery Website
 
 A full-featured jewellery e-commerce landing page inspired by Tanishq.co.in, built with pure HTML, CSS, and vanilla JavaScript. Zero dependencies, no build step.
 
@@ -56,4 +56,4 @@ Replace emoji placeholders in `.product-img` and `.cat-icon-wrap` with real `<im
 
 ## 🔧 Swap Brand Name
 
-Search and replace `Auraa Jewels` / `AuraaJewels` in `index.html` with your brand name.
+Search and replace `Sha Jewellers` / `Sha Jewellers` in `index.html` with your brand name.
